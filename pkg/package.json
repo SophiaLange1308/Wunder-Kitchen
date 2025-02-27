@@ -1,0 +1,15 @@
+{
+  "name": "kuechenplaner",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "kuechenplaner_bg.wasm",
+    "kuechenplaner.js",
+    "kuechenplaner.d.ts"
+  ],
+  "main": "kuechenplaner.js",
+  "types": "kuechenplaner.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
