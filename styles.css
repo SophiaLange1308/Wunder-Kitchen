@@ -1,0 +1,433 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 10px; /* Damit der Inhalt nicht von der Navbar überdeckt wird */
+    overflow-x: hidden; /* Kein horizontaler Scrollbalken */
+    background-color: #FFF1DE;
+}
+
+/* Fixed Navbar */
+.navbar {
+    position:fixed;
+    top: 0;
+    left: 0;
+    height:30px;
+    width: 100%;
+    background: #FFF1DE;
+    opacity: 90%;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Sorgt dafür, dass die ul mittig bleibt */
+    z-index: 2000;
+}
+
+.navbar:hover {
+    opacity: 100%;
+}
+
+/* Logo Styling */
+.logo {
+    position: absolute; /* Damit es nicht das Flexbox-Layout beeinflusst */
+    left: 20px; /* Abstand vom linken Rand */
+}
+
+.logo img {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.logo:hover img {
+    content: url('medien/logo_hover.png'); /* Beim Hover das andere Bild anzeigen */
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Stellt sicher, dass die Navigation in der Mitte bleibt */
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar li {
+    margin: 0 10px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #364D3E;
+    font-size: 18px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: #FFF1DE;
+}
+
+.navbar a:hover {
+    color: #A6B688;
+    border-radius: 5px;
+}
+
+/* Home Section */
+#home {
+    display: flex;
+    justify-content: center; /* Zentriert den Container */
+    align-items: center;
+    background: #FFF1DE; /* Hintergrund passend zum Layout */
+}
+
+/* Container für den Inhalt */
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to top right, #ECD5B6, #364D3E);
+    border-radius: 40px;
+    padding: 50px;
+    width: 90%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-top: 50px;
+}
+
+/* Linke Seite: Text */
+.home-text {
+    flex: 1;
+    color: #FFF1DE;
+}
+
+.home-text h1 {
+    font-size: 120px;
+    font-weight: lighter;
+    color: #FFF1DE;
+    margin-bottom: 20px;
+    margin: 10px;
+}
+
+.home-text p {
+    font-size: 25px;
+    color: #364D3E;
+    font-weight: bold;
+    margin-bottom: 60px;
+}
+
+/* CTA-Button */
+.cta-button {
+    display: inline-block;
+    background: #364D3E;
+    color: #FFF1DE;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: lighter;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #A6B688; /* Hellere Farbe für Hover-Effekt */
+}
+
+/* Rechte Seite: Bild */
+.home-image {
+    flex: 1;
+    display: flex;
+    justify-content:center; /* Bild nach rechts ausrichten */
+}
+
+.home-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Social Media Box */
+.social-media-box {
+    position: absolute; /* Innerhalb von .home-container */
+    bottom: 60px; /* Ganz unten im Container */
+    left: 40px; /* Ganz links */
+    background: #FFF1DE;
+    padding: 15px 20px;
+    display: flex;
+    gap: 30px;
+    border-top-right-radius: 20px; /* Nur oben rechts abgerundet */
+    border-bottom-right-radius: 20px;
+}
+
+/* Social Media Icons */
+.social-icon {
+    height: 30px; /* Größe der Icons */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Hover-Effekt für Icons */
+.social-icon:hover {
+    content: attr(data-hover);
+}
+
+/* Features Section */
+#features {
+    margin-top: 2%;
+    background: #364D3E;
+    width: 100%;
+    padding: 150px 0; /* Mehr Padding oben & unten */
+    position: relative;
+    text-align: center;
+}
+
+/* Bild hinter den Boxen */
+.feature-image {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0; /* Das Bild hinter die Boxen setzen */
+}
+
+.feature-image img {
+    width: 650px; /* Größeres Bild */
+    height: auto;
+}
+
+/* Container für die Feature-Boxen */
+.features-container {
+    display: flex;
+    justify-content: center;
+    gap: 150px; /* Mehr Abstand zwischen den Boxen */
+    margin: 0 auto;
+    flex-wrap: wrap; /* Falls der Bildschirm kleiner wird, brechen die Boxen um */
+    position: relative;
+    z-index: 2; /* Boxen über das Bild legen */
+}
+
+/* Einzelne Feature-Boxen */
+.feature-box {
+    background: rgba(255, 241, 222, 0.8); /* 80% Opazität */
+    border-radius: 40px;
+    padding: 50px; /* Mehr Innenabstand für höhere Boxen */
+    max-width: 350px;
+    height: 400px; /* Höhere Boxen */
+    flex: 1;
+    text-align: center;
+}
+
+/* Titel in den Boxen */
+.feature-box h3 {
+    font-size: 30px;
+    color: #364D3E;
+    margin-bottom: 50px;
+}
+
+/* Text in den Boxen */
+.feature-box p {
+    font-size: 24px;
+    color: #364D3E;
+    line-height: 1.5;
+}
+
+/* Letzter Abschnitt (Steps-Container) */
+#steps {
+    background: #FFF1DE; /* Hintergrund passend zum Rest */
+    position: relative;
+    height: 600px; /* Höhe des Containers */
+    width: 100vw; /* Jetzt volle Breite */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 50px;
+    overflow: hidden;
+}
+
+/* Container für Inhalt */
+.steps-container {
+    display: flex;
+    justify-content: space-between; /* Maximale Verteilung: Text links, Button rechts */
+    align-items: flex-end;
+    width: 100%; /* Container nimmt jetzt volle Breite ein */
+    max-width: 1600px; /* Falls du eine max-Breite willst, passe sie hier an */
+    padding: 0 5%; /* Etwas Abstand zum Rand für schönes Layout */
+    position: relative;
+}
+
+/* Text links unten */
+.steps-title {
+    font-size: 80px;
+    color: #364D3E;
+    font-weight: normal;
+    margin: 0;
+    padding-left: 20px; /* Extra Abstand für mehr Links-Position */
+}
+
+/* Button rechts unten */
+.steps-container .cta-button {
+    background: #364D3E;
+    color: #FFF1DE;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: lighter;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    margin-bottom: 20px; /* Abstand vom unteren Rand */
+    margin-right: 20px; /* Extra Abstand zum rechten Rand */
+}
+
+.steps-container .cta-button:hover {
+    background: #A6B688;
+}
+
+
+/* Bild soll viel weiter in den unteren Container ragen */
+.feature-image {
+    position: absolute;
+    top: 400px; /* Weiter nach unten verschoben */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* Bleibt sichtbar über dem Hintergrund */
+}
+
+.feature-image img {
+    width: 750px; /* Optional vergrößert */
+    height: auto;
+}
+
+
+/* Küchenplaner Hintergrund */
+#kuechenplaner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #364D3E; /* Dunkelgrüner Hintergrund */
+    padding-top: 0px; /* Platz für die Navbar */
+    margin-top: 0;
+}
+
+/* Hauptcontainer */
+.kuechenplaner-container {
+    display: flex;
+    width: 90%;
+    background: #FFF1DE; /* Hellere Box */
+    border-radius: 40px;
+    padding-right: 0%;
+    margin-top: 5%;
+    height: 85%;
+}
+
+/* Linke Seite: Bild */
+.kuechenplaner-image {
+    flex: 1;
+    background: url("medien/kitchen3.jpg") center/cover no-repeat;
+    border-radius: 40px 0 0 40px; /* Abrundung links */
+    
+}
+
+/* Rechte Seite: Content */
+.kuechenplaner-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Überschrift */
+.kuechenplaner-content h1 {
+    font-size: 110px;
+    color: #364D3E;
+    font-weight: normal;
+}
+
+/* Positioniert "Küchenplaner" unten links über dem Bild */
+.kuechenplaner-title {
+    position: absolute;
+    bottom: 0px;
+    margin-bottom:0;
+    left: 100px;
+    font-size: 130px;
+    font-weight: normal;
+    background: linear-gradient(90deg, #F6E4CC 0%, #C0BAA4 63%, #364D3E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2; /* Stellt sicher, dass es über dem Bild bleibt */
+}
+
+
+/* Berechnungstitel */
+.kuechenplaner-content h2 {
+    font-size: 32px;
+    color: #364D3E;
+    font-weight: normal;
+    margin-bottom: 60px;
+}
+
+/* Labels */
+.kuechenplaner-content label {
+    font-size: 20px;
+    color: #364D3E;
+    font-weight: normal;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Eingabefelder */
+.kuechenplaner-content input {
+    width: 50%;
+    padding: 10px;
+    font-size: 18px;
+    background: #ECD5B6;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 40px;
+}
+
+/* Berechnen-Button */
+.kuechenplaner-button {
+    display: inline-block;
+    background: #364D3E;
+    color: #FFF1DE;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: fit-content;
+    border:none;
+}
+
+.kuechenplaner-button:hover {
+    background: #A6B688;
+}
+
+/* Empfehlungstitel */
+.kuechenplaner-content h3 {
+    font-size: 20px;
+    color: #A6B688;
+    margin-top: 50px;
+}
+
+/* Ergebnistest */
+.kuechenplaner-content p {
+    font-size: 16px;
+    color: #364D3E;
+    margin-top: 0;
+}
+
+.kuechenplaner-content p b {
+    font-weight: bold;
+}
+
+/* Entfernt die Lücke oben */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+

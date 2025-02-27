@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Küchenplaner</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer type="module" src="kuechenplaner.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="medien/logo.png" alt="Wunder Kitchen Logo" id="nav-logo" />
+      </a>
+      <div class="nav-links">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#features">Unser Ansatz</a></li>
+          <li><a href="kuechenplaner.html">Küchenplaner</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="kuechenplaner">
+      <div class="kuechenplaner-container">
+        <!-- Linke Seite: Bild -->
+        <div class="kuechenplaner-image">
+          <h1 class="kuechenplaner-title">Küchenplaner</h1>
+        </div>
+
+        <!-- Rechte Seite: Berechnung -->
+        <div class="kuechenplaner-content">
+          <h2>Berechne deine Küchenausstattung</h2>
+
+          <label for="width">Breite deiner Küche in cm</label>
+          <input type="number" id="width" min="50" />
+
+          <label for="height">Höhe deiner Küche in cm</label>
+          <input type="number" id="height" min="50" />
+
+          <label for="depth">Tiefe deiner Küche in cm</label>
+          <input type="number" id="depth" min="50" />
+
+          <button id="calculate" class="kuechenplaner-button">Berechnen</button>
+
+          <h3>Empfohlene Küchenausstattung</h3>
+          <p id="result">
+            Bitte Werte eingeben und auf <b>Berechnen</b> klicken.
+          </p>
+        </div>
+      </div>
+    </section>
+    </body>
+  </html>
+  
+  </body>
+</html>
